@@ -6,19 +6,37 @@ import azure.functions as func
 def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
-    name = req.params.get('name')
-    if not name:
+    weight = req.params.get('weight')
+    recipe = {
+        "brine time" : str( round( int (weight) * 2.4, 2)) + " hours",
+        "salt" : str(round(int (weight) * 0.05, 2)) + " cups",
+        "water" : str(round(int (weight) * 0.06, 2)) + " gallons",
+        "brown sugar" : str( round(int (weight) * 0.13, 2) ) + " cups",
+        "shallots" : str( round(int (weight) * 0.2, 2)),
+        "garlic" : str( round(int (weight) * 0.4, 2)) + " cloves",
+        "whole peppercorns" : str( round (int (weight) * 0.13, 2)) + " tablespoons",
+        "dried juniper berries" : str( round(int (weight) * 0.13, 2)) + " tablespoons",
+        "fresh rosemary" : str( round(int (weight) * 0.13, 2)) + " tablespoons",
+        "thyme" : str( round(int (weight) * 0.06, 2)) + " tablespoons",
+        "roast time" : str(round(int (weight) * 15, 2)) + " minutes",        
+        
+    }
+
+    
+
+    
+    if not weight:
         try:
             req_body = req.get_json()
         except ValueError:
             pass
         else:
-            name = req_body.get('name')
+            weight = req_body.get('weight')
 
-    if name:
-        return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
+    if weight:
+        return func.HttpResponse(f"The turkey weight is {weight}. Here's the recipe \n{recipe}")
     else:
         return func.HttpResponse(
-             "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
+             "This HTTP triggered function executed successfully. Pass a weight in the query string or in the request body for a personalized response.",
              status_code=200
         )
