@@ -1,5 +1,5 @@
 import logging
-
+import json
 import azure.functions as func
 
 
@@ -33,8 +33,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         "roast time" : str(round(int (weight) * 15, 2)) + " minutes",       
         }
 
+        recipe_json = json.dumps(recipe)
 
-        return func.HttpResponse(f"The turkey weight is {weight}. Here's the recipe \n{recipe}")
+        return func.HttpResponse(recipe_json, status_code=200)
     else:
         return func.HttpResponse(
              "This HTTP triggered function executed successfully. Pass a weight in the query string or in the request body for a personalized response.",
