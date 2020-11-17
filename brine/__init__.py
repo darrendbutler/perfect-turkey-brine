@@ -19,6 +19,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     if weight:
         #Create recipe dictionary
+        #Round value to 2 decimal places, convert to string, append unit
         recipe = {
         "brine time" : str( round(int (weight) * 2.4, 2)) + " hours",
         "salt" : str(round(int (weight) * 0.05, 2)) + " cups",
@@ -32,10 +33,11 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         "thyme" : str( round(int (weight) * 0.06, 2)) + " tablespoons",
         "roast time" : str(round(int (weight) * 15, 2)) + " minutes",       
         }
-
+            
+        #Convert dictionary to JSON
         recipe_json = json.dumps(recipe)
-
         return func.HttpResponse(recipe_json, status_code=200)
+        
     else:
         return func.HttpResponse(
              "This HTTP triggered function executed successfully. Pass a weight in the query string or in the request body for a personalized response.",
