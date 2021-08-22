@@ -3,10 +3,12 @@
 ## Your Chefs: Jen Looper, Cloud Advocate (Microsoft) and Darren Butler, Microsoft Student Ambassador
  
 ## This week's featured region: North America
+
+[Watch Solution: Seasons of Serverless 2020- A Turkey Teaser!](https://youtu.be/BCbG50Zhw0Y)
  
 In North America, the holidays are simply not complete without a proper turkey on the table! The only problem is, these birds can be hard to cook so that they are not dry and tough. The secret? A proper brine! 
  
-Here's a [sample recipe](https://www.aspicyperspective.com/best-turkey-brine-recipe/) for that important process in the production of a perfect turkey.
+Here's a [sample recipe](img.https://www.aspicyperspective.com/best-turkey-brine-recipe/) for that important process in the production of a perfect turkey.
  
 There's a science to a great turkey brine, but we, as software engineers, are both absent-minded and need an automated way to remind ourselves each year of the proper percentages of ingredients of a good brine, based on the weight of the turkey.
  
