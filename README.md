@@ -1,3 +1,5 @@
+_Summary: Created a python serverless function to calculate ingredients for a Turkey Brine recipe_
+
 # Challenge 1: The Perfect Holiday Turkey
  
 ## Your Chefs: Jen Looper, Cloud Advocate (Microsoft) and Darren Butler, Microsoft Student Ambassador
